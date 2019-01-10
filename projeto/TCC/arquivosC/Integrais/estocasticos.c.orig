@@ -1,0 +1,198 @@
+#include "statistics.h"
+//#include "estocastico.h"
+
+double * movimentoBrowniano(int intervalo, int numeroPontos, double * incrementoWiener)
+{
+    //Incremento no eixo x do gráfico(tempo)
+    double dt = (double)intervalo/(double)numeroPontos;
+    double* gaussiana = (double*)malloc((numeroPontos)*sizeof(double));//Gaussiana
+    double* W = (double*)malloc(numeroPontos*sizeof(double));//Pontos discretos de Brown.
+    gaussiana = distribuicaoGaussiana(numeroPontos);
+
+    //atribui os primeiros valores
+    *(incrementoWiener) = *(gaussiana+0) * sqrt(dt);
+    *(W)  = *(incrementoWiener+0);
+
+    int counter;
+    for(counter = 1; counter < numeroPontos; counter++)
+    {
+        *(incrementoWiener+counter) =  *(gaussiana+counter) * sqrt(dt);
+        *(W+counter)  =  *(W+(counter-1)) + *(incrementoWiener+counter);
+    }
+
+    free(gaussiana);
+    return W;
+}
+
+double integralITO()
+{
+
+    int tamanho = 1;
+    int pontos = 500;
+    double ito = 0;
+
+    //Obtem o incremento do movimento browniano e o valor da var aleatoria browniana.
+    double* dW = (double*)malloc(pontos*sizeof(double));
+    double* W = movimentoBrowniano(tamanho, pontos, dW);
+
+    //Calcula a soma das areas cuja base tende a 0(limite)
+    //Aqui eh calculada a integral do movimento browniano.
+    int counter;
+    for(counter = 1; counter < pontos; counter++)
+        ito = ito + ( *(W+counter-1) * (*(dW+counter)) );
+
+    //Libera a memoria
+    free(dW);
+    free(W);
+
+    return ito;
+}
+
+void eulerMaruyama()
+{
+
+    printf("cai");
+    // Obtem o incremento do movimento
+    //browniano e o valor da var aleatoria browniana.
+    int tamanho = 1;
+    int pontos = pow(2,8);
+    double * dW = (double*)malloc(pontos*sizeof(double));
+    double * W = movimentoBrowniano(tamanho, pontos, dW);
+    char * nome = "Exactly_exp.dat";
+    char * nome2 = "EM_exp.dat";
+
+    int lambda = 2;
+    int mi = 1;
+    int xZero = 1;
+    int T = 1;
+    double N = pow(2,8);
+    double dt = 1/N;
+    int numeroPontosEM = (int)T/dt;
+    double R = 1;
+
+    double L = (int)N/R;
+    double R_Dt = R*dt;
+    printf("%d",numeroPontosEM);
+
+    int aux = 1;
+
+    if(EULER == 1)
+    {
+        //Metodo aproximado
+
+        double * Xem = (double*)malloc((numeroPontosEM)*sizeof(double));//Solucao aproximada.
+        double Xtemp = xZero;
+
+        //printf("Valor de L %d \n",L);
+        int i;
+        for(i = 0; i < L ; i++)
+        {
+            double Winc = somaPosicoesArray( (R*i) , R*(i+1), dW);
+            Xtemp = Xtemp + (R_Dt*lambda*Xtemp) + Xtemp*Winc*mi;
+            *(Xem+i) = Xtemp;
+        }
+
+        printf("Valor do contador %d \n",i);
+
+        //getchar();
+        //Cria o array: ([dt:dt:T])
+        double * arrayEstocastico = incrementoDt(0,R_Dt,T);//Ok!
+
+        gravaArquivoDistUniforme(arrayEstocastico,Xem,(int)L-1,nome2);
+        plotFunction(nome2);
+
+        free(Xem);
+        free(arrayEstocastico);
+    }
+
+
+    if(EULER == 0)
+    {
+        //Retorna um n negativo, faz sentido meu mov
+        //browniano(500 pts) esta mais para baixo que p cima.
+        //Logo a soma eh negativa.
+        double somaW = somaPosicoesArray(0,pontos,W);
+
+        //Calcula Xtrue, que eh a solução exata.
+        double * Xtrue = (double*)malloc((numeroPontosEM)*sizeof(double));
+
+        //X(t)*dt*lambda que representa a parte deterministica da equacao.
+        double termoDeterministico = lambda-0.5*pow(mi,2);//como mi = 1, o valor desse termo sera -1;
+        //printf("termoDeterministico %f",termoDeterministico);//1.5
+
+        //Cria o array: ([dt:dt:T])
+        double * arrayEstocastico = incrementoDt(0,dt,T);//Ok!
+        //printArray(arrayEstocastico,numeroPontosEM);
+
+        //mi*W
+        double * miVezesArrayEstocastico =
+            multiplicaNumeroVetor(mi,W,numeroPontosEM);
+
+        //printArray(miVezesArrayEstocastico,numeroPontosEM);
+
+        //X+mi*dW
+        double * miVezesArrayEstocastico_arrayEstocastico =
+            somaDoisArrays(arrayEstocastico,
+                           miVezesArrayEstocastico, numeroPontosEM);
+
+        //printArray(miVezesArrayEstocastico_arrayEstocastico,numeroPontosEM);
+
+        double * expoente =
+            multiplicaNumeroVetor(termoDeterministico,
+                                  miVezesArrayEstocastico_arrayEstocastico,numeroPontosEM);
+
+        //printArray(expoente,numeroPontosEM);
+
+        //eleva tudo a funcao exp();
+        double * exponencial =
+            exponenciaNumeroVetor(1,expoente,numeroPontosEM);
+
+        //printArray(exponencial,numeroPontosEM);
+
+        gravaArquivoDistUniforme(arrayEstocastico,exponencial,numeroPontosEM-1,nome);
+        plotFunction(nome);
+
+
+        //Libera a memoria utilizada
+        free(arrayEstocastico);
+        free(exponencial);
+        free(miVezesArrayEstocastico_arrayEstocastico);
+        free(W);
+        free(dW);
+        free(Xtrue);
+        free(expoente);
+        free(miVezesArrayEstocastico);
+    }
+}
+
+double* incrementoDt(double inicio, double intervalo, int fim)
+{
+    int tamanhoArray = fim/intervalo;
+    //printf("tamanho array6 %d \n ",tamanhoArray);
+
+    double * arrayDt = (double*)malloc(tamanhoArray*sizeof(double));
+    int aux = intervalo;
+
+    //Inicializa array com intervalos de dt.
+    //Nao comeca no zero, a primeira posicao eh intervalo(dt).
+    double contador;
+    int contador2 = 0;
+    for(contador = intervalo; contador < fim; contador = contador + intervalo)
+    {
+        //Itera sobre os incrementos dt.
+
+        *(arrayDt+contador2) = contador;
+        contador2++;
+    }
+
+    return arrayDt;//Retorna o array de incrementos.
+}
+
+//
+//void freeMovimentoBrowniano(mBrowniano *liberar)
+//{
+//    free(liberar->dW);
+//    free(liberar->W);
+//    free(liberar);
+//}
+

@@ -1,0 +1,38 @@
+\chapter*{Modelo Estocástico}
+
+Este capítulo é devotado à análise da EDO:
+\begin{eqnarray} \label{bola}
+\frac{dx}{dt} = -2x(x-a)(x+a) ,
+\end{eqnarray}
+quando acrescida de uma perturbação aleatória. Há sistemas cuja descrição em termos de EDO é insuficiente. Isto ocorre quando flutuações aleatórias levam a dinâmica a assumir comportamentos muito diferentes da média. Um exemplo é o processo de determinação do destino celular (FERREL;MACHDLER, 2007), em que flutuações da condição ambiental em que a célula está inserida podem levá-la a assumir funções distintas no organismo.
+A forma geral de uma EDO acrescida de ruído fica:
+\begin{eqnarray}\label{triangulo}
+dx = a(x,t)dt + b(x,t) d\xi(t)
+\end{eqnarray}
+em que a componente $a(x,t)dt$ é herdada do sistema determinístico enquanto a estocasticidade é dada pelo termo $b(x,t)d\xi(t)$. Ao ser acrescida de um fator estocástico $b(x,t)d\xi(t)$ a EDO (\ref{bola}) pode ser denominada EDE (KLOEDER; PLATEN, 1995). O elemento $b(x,t)$ é uma função conhecida enquanto $d\xi(t)$ é um incremento aleatório. A EDE associada é escrita na forma:
+\begin{eqnarray}\label{Cubo}
+{dx} = -2x(x-a)(x+a)dt + \sigma N(0,1) \sqrt{dt} ,
+\end{eqnarray}
+em que $x(t)$ é a variável "aleatória" do sistema. Aqui consideramos $b(x,t) = \sigma $ como uma constante que chamamos amplitude de ruído. O termo $N(0,1) \sqrt{dt}$ é o infinitésimo aleatório, em que $N(0,1)$ é um número real que satisfaz uma distribuição normal de média nula e variância um.
+Em geral, o ruído incluído na equação (\ref{Cubo}) garante que a dinâmica do valor médio da variável aleatória $x(t)$ na equação (\ref{Cubo}) seja idêntica à dinâmica determinística. Isto pois a média da variável de ruído é nula e não contribui quando tomamos o valor médio da equação (\ref{Cubo}). Conforme verificaremos adiante, esse não será, necessáriamente, o caso. Por sua vez, a variância do incremento aleatório é proporcional à ${\sigma}$ e à $dt$.
+
+\section{Solução Numérica via método de Euler Maruyama}
+
+A equação (\ref{Cubo}) pode ser solucionada numericamente pelo emprego do algoritmo de Euler-Maruyama (KLOEDER; PLATEN, 1995). Assim, dada a EDE  (\ref{triangulo}) e a condição inicial $x(0) = x_0 , $ podemos realizar uma dinâmica da variável $x(t)$ no intervalo  $0 \leq t \leq T$ , através da seguinte relação de recorrência:
+\begin{equation}\label{FormaGeralEDE}
+X_{n+1} = X_{n} + a(X_{n})dt + b(X_{n})d\xi , \hspace{0.7cm} n = 0,1,2... 
+\end{equation}
+em que o incremento temporal é indicado por $dt$ e o estocástico por $d\xi$, $a(x,t)dt$ é herdada do sistema determinístico enquanto a estocasticidade é dada pelo termo $b(x,t)d\xi(t)$ e $X_{n} = X(t_{n})$ e $t_{n} = ndt$ que denota o valor de $x$ no instante $\frac{T}{dt}$. O elemento $b(x,t)$ é uma função conhecida enquanto $d\xi(t)$ é um incremento aleatório.A constante \textit{N} é dada como $\frac{T}{dt}$. Para a EDE (\ref{Cubo}), podemos escrever o algoritmo Euler Maruyama. Portanto assumindo as substituições:
+\begin{eqnarray}
+X_{n} &\rightarrow & x_{n}, \label{teste1}   \\
+a(X_{n}) &\rightarrow & -2x_{n}(x_{n}-a)(x_{n}+a), \label{teste2} \\
+b(X_{n}) &\rightarrow & {\sigma}, \label{teste3} \\
+dt &\rightarrow & h, \label{teste4} \\
+d\xi &\rightarrow & N(0,1) \sqrt{h}, \label{teste5} \\
+h &\rightarrow & \frac{T}{N}
+\end{eqnarray}
+relação de recorrência que resolvemos fica:
+\begin{eqnarray}\label{EM}
+x_{n+1} = x_{n} - 2x_{n}(x_{n} - a)(x_{n} + a)h + \sigma N(0,1) \sqrt{h}
+\end{eqnarray}
+em que $N(0,1)$ é um número real que satisfaz uma distribuição normal de média nula e variância um. A equação (\ref{EM}) será utilizada para calcular as soluções numéricas da equação (\ref{Cubo}).

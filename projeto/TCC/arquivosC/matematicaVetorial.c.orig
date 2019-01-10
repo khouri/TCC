@@ -1,0 +1,78 @@
+
+
+
+double * somaDoisArrays(double * a, double * b, int tamanho)
+{
+    //Soma dois arrays(a[0] + b[0] ate tamanho),
+//suponho que ambos tenham o msm tamanho
+
+    //Recebe a soma dos vetores.
+    double * retorno = (double*)malloc(tamanho*sizeof(double));
+
+    int contador;
+    for(contador = 0; contador < tamanho ; contador++)
+        *(retorno+contador) = *(a+contador) + *(b+contador);
+
+    return retorno;
+}
+
+double somaPosicoesArray(int inicio, int fim, double * array)
+{
+    //Soma um intervalo(inicio - fim) de posicoes do array.
+//Inclusive inicio e fim sao somados.
+
+    double soma = 0;
+    int contador = inicio;
+    while(contador <= fim)
+    {
+        soma = soma + *(array+contador);
+        contador++;
+    }
+
+    return soma;
+}
+
+double * exponenciaNumeroVetor(double numero, double * array, int tamanhoArray)
+{
+    //Eleva todos os números de um vetor a funcao exp(x);
+
+    double * retorno = (double*)malloc(tamanhoArray*sizeof(double));
+
+    int contador;
+    for(contador = 0; contador < tamanhoArray ; contador++)
+        *(retorno+contador) = exp(*(array+contador));
+
+    return retorno;
+}
+
+double * multiplicaNumeroVetor(double numero, double * array, int tamanhoArray)
+{
+    //Multiplica um numero em todas as posicoes de um array.
+
+    double * retorno = (double*)malloc(tamanhoArray*sizeof(double));
+
+    int contador;
+    for(contador = 0; contador < tamanhoArray ; contador++)
+        *(retorno+contador) = *(array+contador) * numero;
+
+    return retorno;
+}
+
+double * somaNumeroVetor(double numero, double * array, int tamanhoArray)
+{
+    //Soma um numero em todas as posicoes de um array.
+
+    double * retorno = (double*)malloc(tamanhoArray*sizeof(double));
+
+    int contador;
+    for(contador = 0; contador < tamanhoArray ; contador++)
+    {
+        //printf("%f \n",*(array+contador));
+        *(retorno+contador) = *(array+contador) + numero;
+        // printf("%f \n",*(array+contador));
+    }
+    //printf("numero %f", numero);
+
+    return retorno;
+}
+

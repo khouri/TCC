@@ -1,0 +1,104 @@
+% Para digitar e compreender em portugues os comandos
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+
+%Para incluir figuras
+\usepackage{graphicx}
+
+%Símbolos matemáticos.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+%Permite customizar a legenda das figuras.
+\usepackage[small,bf]{caption}
+
+%Define as margens da folha, tamanho...
+\usepackage[lmargin=2cm,tmargin=2cm,bmargin=2cm,rmargin=2cm]{geometry}
+
+
+%Put abntex package
+
+
+% To type URL with linebreak at special characters.
+\usepackage{url}
+
+% Improved and customizable hyphenation patterns.
+%\usepackage{hyphenat}
+%\hyphenation{pe-rio-do res-pon-sá-vel}
+
+% Pacote de cores
+\usepackage{color}
+\usepackage{xcolor}        
+
+%Permite a inclusão de código fonte de forma bonita.
+\usepackage{listings}
+\lstset{		
+	language = C, 				% Linguagem de programação
+	keywordstyle = \color{blue}, 		% Estilo das palavras chaves
+	commentstyle = \color{dkgreen}, 	% Estilo dos Comentários
+	stringstyle =  \color{orange}, 		% Estilo de Strings
+	numbers=left,
+        stepnumber=1,
+        firstnumber=1,
+        numberstyle=\tiny,
+        extendedchars=true,
+        breaklines=true,
+        frame=tb,
+        basicstyle=\footnotesize,
+        stringstyle=\color{red},
+        showstringspaces=false,
+        otherkeywords={FILE, NULL, free, malloc, cos, sqrt, log}
+        }
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Listagens}
+
+
+%Permite incluir uma lista do tipo Zebra
+
+%\usepackage{listings}
+%\usepackage{xcolor}
+
+
+%Cria um comando de lista com duas cores de linhas em latex (Estilo 'Zebra').
+%\newcommand\realnumberstyle[1]{}
+
+%\makeatletter
+%\newcommand{\zebra}[3]{%
+ %   {\realnumberstyle{#3}}%
+ %   \begingroup
+ %   \lst@basicstyle
+ %   \ifodd\value{lstnumber}%
+ %       \color{#1}%
+ %   \else
+ %       \color{#2}%
+ %   \fi
+ %       \rlap{\hspace*{\lst@numbersep}%
+ %       \color@block{\linewidth}{\ht\strutbox}{\dp\strutbox}%
+ %       }%
+ %   \endgroup
+%}%
+%\makeatother
+
+
+%% Referências bibliográficas e afins
+% Formatar as citações no texto e a lista de referências
+\usepackage{natbib}
+
+% Adicionar bibliografia, índice e conteúdo na Tabela de conteúdo
+% Não inclui lista de tabelas e figuras no índice
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+
+
+%inserir codigo fonte bonito.
+\usepackage{minted}
+
+%\usemintedstyle{borland}
+\usemintedstyle{default}
+\definecolor{bg_gray}{rgb}{0.95,0.95,0.95}
+
+\renewcommand{\theFancyVerbLine}{
+ \sffamily\textcolor[rgb]{0.5,0.5,0.5}{\scriptsize\arabic{FancyVerbLine}}}
+

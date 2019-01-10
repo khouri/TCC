@@ -1,0 +1,42 @@
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*************************Arquivo header do modulo de estatisticas**************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/***************Conteudo: funcao que calcula histograma, funcoes auxiliares para************/
+/**********calcular o histograma e uma struct que representa um histograma******************/
+/*******************************************************************************************/
+/***************Autor: Adilson Lopes Khouri*************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+
+//Funcao auxiliar do create histogram. Calcula o espaco euclidiano entre dois pontos no plano.
+double dominioGrafico(double inicio, double fim);
+
+
+//Funcao auxiliar do create histogram. Calcula os valores que limitam as barras.
+double* intervaloBarras(int NumBarras, double inicioIntervalo,
+                        double fimintervalo);
+
+
+//Funcao que calcula as frequencias dos numeros de pontos. Serve para qualquer distriuicao.
+int * CreateHistogram(double nBarras, double * pontos, int nPontos,
+                      double * retorno, int inicio, int fim);
+
+//Estrutura que representa um histograma.
+typedef struct
+{
+    //int tamanho;//Tamanho do array.
+    double * intervalos;//Intervalos em x entre barras.
+    int * frequencia;//Frequencia dos pontos nas barras.
+    int tam;
+
+}histograma;
+
+//Funcao que calcula as frequencias dos numeros de pontos.
+////Serve para qualquer distribuicao.
+histograma * calculaFrequencia(double * pontos, int nPontos,
+                               int nBarras, int inicio, int fim);
+
+void freeHistograma(histograma * liberar);

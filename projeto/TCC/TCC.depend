@@ -1,0 +1,535 @@
+# depslib dependency file v1.0
+1304910894 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/Extras.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1305475952 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/IO.c
+
+1304983811 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/distribuicao.c
+
+1305476023 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/distribuicoes.c
+	<values.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"../arquivosH/estatistica.h"
+	"../arquivosH/gravarArquivos.h"
+	"../arquivosH/plotarGraficos.h"
+
+1305410063 /home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosH/estatistica.h
+
+1305235838 /home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosH/gravarArquivos.h
+
+1305060206 /home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosH/plotarGraficos.h
+
+1305476098 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/estatisticas.c
+	"../arquivosH/estatistica.h"
+
+1305476032 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/estocasticos.c
+	"../arquivosH/statistics.h"
+
+1304988908 /home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosH/statistics.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<values.h>
+	<math.h>
+
+1305476035 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/gravarArquivos.c
+	<stdio.h>
+	<stdlib.h>
+	"../arquivosH/estatistica.h"
+
+1305476197 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/main.c
+
+1305153454 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/matematicaVetorial.c
+
+1305476213 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/plotarGraficos.c
+	"../gnuplot/gnuplot_i.h"
+	"../gnuplot/gnuplot_i.c"
+
+1304910894 /home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/gnuplot/gnuplot_i.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<stdarg.h>
+
+1304910894 /home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/gnuplot/gnuplot_i.c
+	"gnuplot_i.h"
+
+1305476039 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/statistics.c
+	"../arquivosH/statistics.h"
+
+1304986975 source:/home/adilson/Desktop/untitledfolder3/rep/projeto/TCC/arquivosC/testes.c
+
+1304910894 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/Extras.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1305475952 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/IO.c
+
+1304983811 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/distribuicao.c
+
+1306982019 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/estatisticas.c
+	"../arquivosH/estatistica.h"
+
+1311032858 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/estatistica.h
+	"../arquivosH/matematicaVetorial.h"
+
+1311119106 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/estocasticos.c
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/matematicaVetorial.h"
+	"../arquivosH/estocastico.h"
+
+1304988908 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/statistics.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<values.h>
+	<math.h>
+
+1311031512 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/gravarArquivos.c
+	<stdio.h>
+	<stdlib.h>
+	"../arquivosH/estatistica.h"
+
+1311121471 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/main.c
+	"../arquivosH/main.h"
+	<stdio.h>
+
+1311118408 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/matematicaVetorial.c
+	"../arquivosH/matematicaVetorial.h"
+
+1310925610 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/plotarGraficos.c
+	"../gnuplot/gnuplot_i.h"
+	"../gnuplot/gnuplot_i.c"
+	<string.h>
+
+1304910894 /home/adilson/Desktop/TCC/rep/projeto/TCC/gnuplot/gnuplot_i.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<stdarg.h>
+
+1304910894 /home/adilson/Desktop/TCC/rep/projeto/TCC/gnuplot/gnuplot_i.c
+	"gnuplot_i.h"
+
+1305476039 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/statistics.c
+	"../arquivosH/statistics.h"
+
+1304986975 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/testes.c
+
+1311116627 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/distribuicoes.c
+	"../arquivosH/distribuicoes.h"
+
+1311031469 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/gravarArquivos.h
+
+1305060206 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/plotarGraficos.h
+
+1305994414 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/ScriptGeraDistribuicoes.c
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/estatistica.h"
+	"../arquivosH/ScriptGeraDistribuicoes.h"
+
+1311032804 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/distribuicoes.h
+	<values.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/dir.h>
+	<sys/time.h>
+	<time.h>
+	<sys/timeb.h>
+	"../arquivosH/gravarArquivos.h"
+	"../arquivosH/plotarGraficos.h"
+	"../arquivosH/SistemaArquivos.h"
+
+1305494611 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/ScriptGeraDistribuicoes.h
+
+1304910894 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/Extras.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1305475952 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/IO.c
+
+1305994414 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/ScriptGeraDistribuicoes.c
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/estatistica.h"
+	"../arquivosH/ScriptGeraDistribuicoes.h"
+
+1305484465 /home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosH/distribuicoes.h
+
+1305410063 /home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosH/estatistica.h
+
+1305494611 /home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosH/ScriptGeraDistribuicoes.h
+
+1304983811 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/distribuicao.c
+
+1305847239 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/estatisticas.c
+	"../arquivosH/estatistica.h"
+
+1306711100 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/gravarArquivos.c
+	<stdio.h>
+	<stdlib.h>
+	"../arquivosH/estatistica.h"
+
+1305476197 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/main.c
+
+1305153454 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/matematicaVetorial.c
+
+1305997898 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/plotarGraficos.c
+	"../gnuplot/gnuplot_i.h"
+	"../gnuplot/gnuplot_i.c"
+
+1304910894 /home/adilson/Desktop/untitledFolder/projeto/TCC/gnuplot/gnuplot_i.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<stdarg.h>
+
+1304910894 /home/adilson/Desktop/untitledFolder/projeto/TCC/gnuplot/gnuplot_i.c
+	"gnuplot_i.h"
+
+1305476039 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/statistics.c
+	"../arquivosH/statistics.h"
+
+1304988908 /home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosH/statistics.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<values.h>
+	<math.h>
+
+1304986975 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/testes.c
+
+1306712584 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/estocasticos.c
+	"../arquivosH/statistics.h"
+	"../arquivosH/distribuicoes.h"
+
+1306713880 source:/home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosC/distribuicoes.c
+	<values.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../arquivosH/estatistica.h"
+	"../arquivosH/gravarArquivos.h"
+	"../arquivosH/plotarGraficos.h"
+	"../arquivosH/distribuicoes.h"
+	<sys/dir.h>
+	<sys/time.h>
+	<time.h>
+	<sys/timeb.h>
+
+1305482804 /home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosH/gravarArquivos.h
+
+1305060206 /home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosH/plotarGraficos.h
+
+1305153454 /home/adilson/Desktop/untitledFolder/projeto/TCC/arquivosH/estocastico.h
+
+1310849521 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/CRUD_Graficos.c
+	"../arquivosH/CRUD_Graficos.h"
+
+1310849420 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/CRUD_Graficos.h
+
+1310925879 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/main2.c
+	"../arquivosH/main2.h"
+
+1310925663 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/main2.h
+	"../arquivosH/estatistica.h"
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/estocastico.h"
+	"../arquivosH/CRUD_Graficos.h"
+
+1311119053 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/estocastico.h
+	"../arquivosH/SistemaArquivos.h"
+	"../arquivosH/matematicaVetorial.h"
+
+1311031988 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/main.h
+	"../arquivosH/estatistica.h"
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/estocastico.h"
+	"../arquivosH/CRUD_Grafico.h"
+	"../arquivosH/InterfaceUsuario.h"
+
+1311113458 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/SistemaArquivos.c
+	"../arquivosH/SistemaArquivos.h"
+
+1311113495 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/SistemaArquivos.h
+	<stdio.h>
+
+1311021885 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/CRUD_Grafico.c
+	"../arquivosH/CRUD_Grafico.h"
+
+1311021870 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/CRUD_Grafico.h
+	<stdio.h>
+
+1310926926 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/Helper.c
+
+1311032453 source:/home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosC/InterfaceUsuario.c
+
+1311032445 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/InterfaceUsuario.h
+
+1311118225 /home/adilson/Desktop/TCC/rep/projeto/TCC/arquivosH/matematicaVetorial.h
+
+1315447894 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/distribuicoes.c
+	"../arquivosH/distribuicoes.h"
+
+1315447885 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/distribuicoes.h
+	<values.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/dir.h>
+	<sys/time.h>
+	<time.h>
+	<sys/timeb.h>
+	"../arquivosH/gravarArquivos.h"
+	"../arquivosH/plotarGraficos.h"
+	"../arquivosH/Diretorios.h"
+	"../arquivosH/Helper.h"
+
+1315448042 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/gravarArquivos.h
+	<stdio.h>
+	<stdlib.h>
+
+1315448123 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/plotarGraficos.h
+	<string.h>
+
+1315437818 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/SistemaArquivos.h
+	<stdio.h>
+
+1315524384 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/estatisticas.c
+	"../arquivosH/estatistica.h"
+
+1315448005 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/estatistica.h
+	"../arquivosH/matematicaVetorial.h"
+
+1315448076 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/matematicaVetorial.h
+
+1315437614 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/estocasticos.c
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/matematicaVetorial.h"
+	"../arquivosH/estocastico.h"
+
+1315438497 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/estocastico.h
+	"../arquivosH/Diretorios.h"
+	"../arquivosH/matematicaVetorial.h"
+
+1320000622 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/gravarArquivos.c
+	"../arquivosH/gravarArquivos.h"
+
+1315448105 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/matematicaVetorial.c
+	"../arquivosH/matematicaVetorial.h"
+
+1319921933 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/plotarGraficos.c
+	"../arquivosH/plotarGraficos.h"
+	"../gnuplot/gnuplot_i.h"
+	"../gnuplot/gnuplot_i.c"
+
+1311201826 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/gnuplot/gnuplot_i.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<stdarg.h>
+
+1311201826 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/gnuplot/gnuplot_i.c
+	"gnuplot_i.h"
+
+1311537576 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/CRUD_Grafico.c
+	"../arquivosH/CRUD_Grafico.h"
+
+1311537772 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/CRUD_Grafico.h
+	<stdio.h>
+
+1325617222 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/Helper.c
+	"../arquivosH/Helper.h"
+
+1312117856 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/InterfaceUsuario.c
+	"../arquivosH/InterfaceUsuario.h"
+
+1315437375 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/SistemaArquivos.c
+	"../arquivosH/SistemaArquivos.h"
+
+1320518620 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/main.c
+	"../arquivosH/main.h"
+
+1315523075 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/main.h
+	"../arquivosH/estatistica.h"
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/Integrais/estocastico.h"
+	"../arquivosH/UI/InterfaceUsuario.h"
+
+1311556860 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/InterfaceUsuario.h
+
+1320969207 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/testes/testes.c
+	"../../arquivosH/testes/testes.h"
+	<errno.h>
+	<stdio.h>
+	<string.h>
+
+1317690371 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/testes/testes.h
+	"../estatistica.h"
+	"../distribuicoes.h"
+	"../Integrais/estocastico.h"
+	"../UI/InterfaceUsuario.h"
+	<stdio.h>
+
+1311537576 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/CRUD_Grafico.c
+	"../arquivosH/CRUD_Grafico.h"
+
+1311537772 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/CRUD_Grafico.h
+	<stdio.h>
+
+1311724880 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/Helper.c
+
+1312117856 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/InterfaceUsuario.c
+	"../arquivosH/InterfaceUsuario.h"
+
+1311556860 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/InterfaceUsuario.h
+
+1311461762 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/SistemaArquivos.c
+	"../arquivosH/SistemaArquivos.h"
+
+1311461636 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/SistemaArquivos.h
+	<stdio.h>
+
+1311289918 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/distribuicoes.c
+	"../arquivosH/distribuicoes.h"
+
+1311202276 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/distribuicoes.h
+	<values.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<sys/dir.h>
+	<sys/time.h>
+	<time.h>
+	<sys/timeb.h>
+	"../arquivosH/gravarArquivos.h"
+	"../arquivosH/plotarGraficos.h"
+	"../arquivosH/SistemaArquivos.h"
+
+1311550008 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/gravarArquivos.h
+	<stdio.h>
+	<stdlib.h>
+
+1311204942 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/plotarGraficos.h
+	<string.h>
+
+1311201826 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/estatisticas.c
+	"../arquivosH/estatistica.h"
+
+1311201826 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/estatistica.h
+	"../arquivosH/matematicaVetorial.h"
+
+1311201826 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/matematicaVetorial.h
+
+1312137752 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/gravarArquivos.c
+	"../arquivosH/gravarArquivos.h"
+
+1311201826 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/matematicaVetorial.c
+	"../arquivosH/matematicaVetorial.h"
+
+1311205580 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/plotarGraficos.c
+	"../arquivosH/plotarGraficos.h"
+	"../gnuplot/gnuplot_i.h"
+	"../gnuplot/gnuplot_i.c"
+
+1311201826 /media/Data/TCC/RepositorioCF/projeto/TCC/gnuplot/gnuplot_i.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<stdarg.h>
+
+1311201826 /media/Data/TCC/RepositorioCF/projeto/TCC/gnuplot/gnuplot_i.c
+	"gnuplot_i.h"
+
+1315416384 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/estocasticos.c
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/matematicaVetorial.h"
+	"../arquivosH/estocastico.h"
+
+1313947338 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/estocastico.h
+	"../arquivosH/SistemaArquivos.h"
+	"../arquivosH/matematicaVetorial.h"
+
+1315417416 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/main.c
+	"../arquivosH/main.h"
+
+1311545250 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/main.h
+	"../arquivosH/estatistica.h"
+	"../arquivosH/distribuicoes.h"
+	"../arquivosH/estocastico.h"
+	"../arquivosH/CRUD_Grafico.h"
+	"../arquivosH/InterfaceUsuario.h"
+
+1315417416 source:/media/Data/TCC/RepositorioCF/projeto/TCC/arquivosC/testes/testes.c
+	"../../arquivosH/testes/testes.h"
+	<errno.h>
+	<stdio.h>
+	<string.h>
+
+1315416903 /media/Data/TCC/RepositorioCF/projeto/TCC/arquivosH/testes/testes.h
+	"../estatistica.h"
+	"../distribuicoes.h"
+	"../estocastico.h"
+	"../CRUD_Grafico.h"
+	"../InterfaceUsuario.h"
+	<stdio.h>
+
+1319296863 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/Helper.h
+
+1315523257 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/Diretorios.c
+	"../arquivosH/Diretorios.h"
+
+1315447670 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/Diretorios.h
+	<stdio.h>
+
+1315769484 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/Integrais/estocasticos.c
+	"../../arquivosH/distribuicoes.h"
+	"../../arquivosH/matematicaVetorial.h"
+	"../../arquivosH/Integrais/estocastico.h"
+
+1315754067 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/Integrais/estocastico.h
+	"../Diretorios.h"
+	"../matematicaVetorial.h"
+
+1315525117 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/UI/InterfaceUsuario.c
+	"../../arquivosH/UI/InterfaceUsuario.h"
+
+1315525127 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/UI/InterfaceUsuario.h
+
+1315526435 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/UI/UIConsole.c
+	"../../arquivosH/UI/UIConsole.h"
+
+1315525117 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/UI/UIConsole.h
+
+1317685422 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/Integrais/IntegraisArtigo.c
+	"../../arquivosH/Integrais/IntegraisArtigo.h"
+	"../../arquivosH/distribuicoes.h"
+
+1319909868 source:/home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosC/Integrais/IntegralTCC.c
+	"../../arquivosH/Integrais/IntegraisTCC.h"
+	"../../arquivosH/matematicaVetorial.h"
+	"../../arquivosH/distribuicoes.h"
+	"../../arquivosH/Integrais/IntegraisArtigo.h"
+
+1316466625 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/Integrais/IntegraisArtigo.h
+
+1317689690 /home/adilson/Desktop/TCC/RepositorioCF/projeto/TCC/arquivosH/Integrais/IntegraisTCC.h
+

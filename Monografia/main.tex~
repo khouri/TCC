@@ -1,0 +1,175 @@
+%--------------------------------------------------------------------%
+%----------------Monografia de conclusão de curso.-------------------%
+%-----------EACH: Escola de Artes Ciências e Humanidades-------------%
+%--------------Bacharelado em Sistemas de Informação-----------------%
+%----------Discente: Adilson Lopes Khouri N° USP: 6411994------------%
+%-----------------Docente: Alexandre Ferreira Ramos------------------%
+%--------------------------------------------------------------------%
+
+
+
+% Monografia, papel a4, fonte tamanho 10pt.
+\documentclass[10pt,a4paper]{report}
+
+
+% Pacotes e comandos customizados %
+\include{meta}
+
+
+\begin{document}
+
+%Esta aqui apenas para n dar erro, deve ser removido.
+\cite{Brauman}
+\cite{Cprograming}
+\cite{DAWKINS}
+\cite{HIGHAM}
+\cite{Xenopus}
+\cite{KLOEDEN}
+\cite{PODOLSKY}
+\cite{SALINAS}
+\cite{SAUER}
+
+
+%--------------------------------------------------------------------%
+%---------------------Capítulos da monografia------------------------%
+%-----------------Encontram dentro da pasta Secoes-------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%--------------------------Resumo------------------------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/Resumo}
+%--------------------------------------------------------------------%
+%--------------------Término do Resumo-------------------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%------------------------Introdução----------------------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/introducao}
+%--------------------------------------------------------------------%
+%--------------------Término da Introdução---------------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%-----------------Distribuições e Mov Browniano----------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/Distribuicoes}
+%--------------------------------------------------------------------%
+%---------------Término da distribuições e Mov Browniano-------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%-------------------Modelo deterministico----------------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/ModeloDeterministico}
+%--------------------------------------------------------------------%
+%---------------Término do Modelo deterministico---------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%-------------------Modelo Estocástico-------------------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/ModeloEstocastico}
+%--------------------------------------------------------------------%
+%_---------------Término do Modelo Estocástico-----------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%---------------Resultados e Discussão-------------------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/Resutados}
+%--------------------------------------------------------------------%
+%-------------Término dos Resultados e Discussão---------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%--------------------Análise dos códigos-----------------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/AnaliseCodigos}
+%--------------------------------------------------------------------%
+%-------------Término da análise dos códigos-------------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%---------------------------Conclusão--------------------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/Conclusao}
+%--------------------------------------------------------------------%
+%----------------------Término da Conclusão--------------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%----------------Término dos Capítulos da monografia-----------------%
+%--------------------------------------------------------------------%
+
+
+
+%--------------------------------------------------------------------%
+%-------------------------Bibliografia-------------------------------%
+%--------------------------------------------------------------------%
+
+
+%\begin{thebibliography}{99}
+%\bibitem{BO,00} BOYCE, William E.; DIPRIMA, Richard C.. Elementary Differential Equations and Boundary Value Problems. New York: Wiley, 2000.
+%
+%\bibitem{BRA,10} BRAUMANN, Carlos. \textbf{Biomatemática}. Disponível em:
+%<http://www.dmat.uevora.pt/evm07/MatApoio.html>. Acesso em: 05 Mar. 2010.
+%
+%\bibitem{CP,11} CPROGRAMING.COM. \textbf{Debugging Segmentation Faults and Pointer Problems}. Disponível em: <http://www.cprogramming.com/debugging/segfaults.html>. Acesso em: 25 maio 2011. 
+%
+%\bibitem{DA,11} DAWKINS, Prof° Dr. Paul. Paul's Online Math Notes: Differential Equations - Notes. Disponível em: 
+%<http://tutorial.math.lamar.edu/Classes/DE/Definitions.aspx>. Acesso em: 18 dez. 2011.
+%
+%\bibitem{FM,13} FERREL, James E.;MACHLEDER, Eric M. \textbf{The Biochemical Basis of an All-or-None Cell
+%Fate Switch in Xenopus Oocytes} Disponível em: <http://www.sciencemag.org/content/280/5365/895.abstract>. Acesso em: 6/11/2011
+%
+%\bibitem{HI,01} HIGHAM, Desmond J.. \textbf{An Algoritmic Introduction to Numerical Simulation of Stochastic Differential Equations.} SIAM Rev., v. 43, n. 3, p.525-546, 01 ago. 2001.
+%
+%\bibitem{KL,95} KLOEDEN, Peter E.; PLATEN, Eckhard. \textbf{Numerical Solution of Stochastic Differencial Equations.} New York: Springer, 1995. 625 p
+%
+%\bibitem{PO} PODOLSKY, Dmitry I. On triviality of λφ4 quantum field theory in four dimensions. Disponível em: <http://arxiv.org/abs/1003.3670>. Acesso em: 18 mar. 2010.
+%
+%\bibitem{RY,10} RYAN, Mark. \textbf{Cálculo para Leigos.} 2. ed. Wikinnetka,illinois: Alta Books, 2010.
+%
+%\bibitem{SA,11} SALINAS, Silvio R.A.. \textbf{Einstein e a teoria do movimento browniano.} Rev. Bras. Ensino Fís., São Paulo, v. 27, n. 2, June 2005 .  Available from <http://www.scielo.br/scielo.php?script=sci_arttext&pid=S1806-11172005000200013&lng=en&nrm=iso>. access on 08 Mar. 2011.
+%
+%\bibitem{SU,10} SAUER, Timothy. \textbf{Numerical Solution of Stochastic Differencial Equations in Finance.} Disponível em: <http://math.gmu.edu/~tsauer/>. Acesso em: 8 mar. 2010.
+%
+%\bibitem{ST} STEWART, James. Cálculo 2. São Paulo: Thomson, 2006
+
+%\bibliography{bib/example}
+
+
+% Importa o arquivo *.bib
+%\bibliographystyle{apalike}
+%\bibliography{mestre}
+
+\bibliographystyle{abnt-alf}
+\bibliography{mestre}
+
+
+%--------------------------------------------------------------------%
+%--------------------Término da Bibliografia-------------------------%
+%--------------------------------------------------------------------%
+
+
+%--------------------------------------------------------------------%
+%--------------------Código Fonte - Apendice A-----------------------%
+%--------------------------------------------------------------------%
+\input{./Secoes/appendix}
+%--------------------------------------------------------------------%
+%--------------Término do Código Fonte - Apendice A------------------%
+%--------------------------------------------------------------------%
+
+
+\end{document}

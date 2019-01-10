@@ -1,0 +1,44 @@
+\chapter*{Introdução}
+
+Sistemas celulares apresentam um comportamento que se altera no tempo, um exemplo é o 
+processo de determinação do destino celular durante o desenvolvimento de metazoários (FERREL;MACHDLER, 2007).
+Uma possível ferramenta matemática para estudar esse tipo de sistema são as 
+equações diferenciais ordinárias (EDO's).
+Uma EDO relaciona uma função e suas derivadas em relação a variável independente. Uma EDO:
+\begin{eqnarray} \label{EDOFormaGeral}
+F(t, y^{1}, y^{2},... y^{n}) = 0
+\end{eqnarray}
+é dita linear se \textit{F} é uma função linear das variáveis: $y^{1}, y^{2},... y^{n}$ em que $y^{k}$ indica a derivada k-ésima da funcao y em relação a uma variável independente \textit{t}. A forma geral de uma EDO linear de ordem \textit{n} pode ser visualizada abaixo:
+\begin{equation} \label{LINEAR}
+a_{n}(t)y^{(n)}(t) + a_{n-1}(t)y^{(n-1)}(t) +...+ a_{0}(t)y^{(0)}(t) = g(t),
+\end{equation}
+uma equação que não pode ser escrita na forma (\ref{LINEAR}) é dita não linear segundo BOYCE e DIPRIMA (2000).
+
+Eventualmente, o sistema descrito por uma EDO, pode sofrer 
+perturbações aleatórias. 
+Por exemplo, o número de constituintes moleculares de uma célula pode flutuar em torno de uma média, 
+gerando heterogeneidade em populações celulares. As EDO's apropriadas para esse tipo de fenômeno 
+podem ser adidas de um termo de ruído. Nesse caso, elas são chamadas de equações diferenciais estocásticas (EDE's).
+
+EDE's descrevem o comportamento de uma variável aleatória como função do tempo e/ou espaço.
+Esta variável satisfaz uma distribuição de probabilidades. Se a distribuição de probabilidades depende do tempo, diremos que o sistema está fora do equilíbrio e, caso contrário, em regime estacionário. Nesta monografia, visamos analisar o comportamento
+no equilíbrio de uma EDE cuja componente determinística apresenta bi-estabilidade. 
+
+Um exemplo simples de sistema físico descritível por EDE's são os movimentos do tipo Browniano. Uma partícula realiza deslocamentos sujeitos a interações aleatórias com seu meio. Essas colisões ocorrem a intervalos de tempo e intensidades de força aleatórias. O comprimento dos deslocamentos entre duas colisões (para um número total de colisões macroscópicamente grande \textit{e.g.} $10^{23}$). A variância na posição da partícula cresce com o tempo e indica que a partícula, independentemnte de sua posição inicial, apresentará probabilidades quase idênticas de estar em qualquer posição da superfície do líquido (SILVA;LIMA, 2007).
+
+Por outro lado, em sistemas multi-estáveis, a condição inicial do objeto descrito pela EDO determina seu comportamento para grandes intervalos de tempo. Esses sistemas, quando possuem termos aleatórios, podem apresentar migração entre regimes assimptóticos correspondentes às condições iniciais variadas. Neste projeto, investigaremos quais as formas de ruído que geram esse efeito.
+
+Para proceder com a investigação acima, consideramos a seguinte EDO (em que \textit{a} é uma constante):
+\begin{equation} \label{IntroducaoEDO}
+\frac{dx}{dt} = -2x(x-a)(x+a) ,
+\end{equation}
+e a seguinte EDE (EDO acrescida do ruído):
+\begin{equation} \label{IntroducaoEDE}
+{dx} = -2x(x-a)(x+a)dt + \sigma N(0,1) \sqrt{dt} ,
+\end{equation}
+
+Em nosso projeto solucionamos a EDO (\ref{IntroducaoEDO}) numérica e analiticamente e a EDE \newline
+(\ref{IntroducaoEDE}) numéricamente através do algoritmo de Euler Maruyama. As soluções numéricas da equação (\ref{IntroducaoEDE}) foram analisadas graficamente e, desta forma, pudemos verificar a migração da solução em torno de cada um dos limites assimptóticos da equação (\ref{IntroducaoEDO}). 
+
+A monografia está estruturada com os seguintes capítulos: ``Modelo Determinístico" onde serão abordados \newline
+a EDO, sua solução analítica e sua solução numérica, ``Modelo Estocástico" nesse capítulo será introduzido um ruído na EDO obtendo a EDE a ser analisada e tambem será apresentada a solução numérica da EDE , ``Resultados e Discussão" aqui serão exibidos os gráficos que foram plotados com os resultados de nossa análise da EDO e EDE , ``Aspectos numéricos" onde serão analisados mais a fundo os códigos implementados , ``Conclusão" , ``Referências Bibliografia" e um apêndice com os códigos fonte implementados e um apêndice com Distribuições de variáveis aleatórias e Movimento Browniano.

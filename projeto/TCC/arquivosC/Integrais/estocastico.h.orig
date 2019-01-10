@@ -1,0 +1,44 @@
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*************************Arquivo header do modulo de estocastico***************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/***************Conteudo: funcoes que: calculam numericamente uma integral de ITO***********/
+/**********calculam a solucao exata de uma integral estocastica, calculam numericamente*****/
+/**********atraves do algoritmo de Euler Maruyama a solucao da mesma integral solucionada***/
+/**********de maneira exata. Por ultimo uma funcao que calcula o movimento Browniano********/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/***************Autor: Adilson Lopes Khouri*************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+//Funcao que calcula o movimento browniano com o auxilio de uma serie
+//de numeros pesudo aleatorios que satisfazem uma gaussiana N(0,1)
+//media zero e desvio padrao = 1.
+double * movimentoBrowniano(int intervalo, int numeroPontos,
+                            double * incrementoWiener);
+
+//Calcula numericamente a seguinte equacao diferencial estocastica:
+//representada pelo mov Browniano, segundo as regras de ITO(Japa velho)
+double integralITO();
+
+
+//Algoritmo de Euler Maruyama calcula a solucao exata da
+//seguinte integral: dX = lambda*X dt + mu*X dW X(0) = 1.
+//Calcula a mesma integral utilizando o algoritmo de Euler Maruyama
+//plota os dois graficos tornando evidente a diferenca entre eles(erro).
+void eulerMaruyama();
+
+
+////Estrutura que representa um histograma
+//typedef struct
+//{
+//    int tamanho;//Tamanho do array.
+//    double * dW;//Incremento infinitesimal.
+//    int * W;//Soma cumulativa seguindo as regras de ITO.
+//
+//}mBrowniano;
+//
+//
+//void freeMovimentoBrowniano(mBrowniano *liberar);

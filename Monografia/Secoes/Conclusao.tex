@@ -1,0 +1,19 @@
+\chapter{Conclusão}
+Neste trabalho de conclusão de curso, apresentamos a solução exata e numérica de uma 
+EDO, equação (\ref{ModeloDeterministicoEDO}), que apresenta bi-estabilidade. A solução exata foi obtida por integração direta da EDO, enquanto 
+a solução numérica foi obtida pela implementação do algoritmo de Euler em linguagem C. 
+O segundo ponto importante foi estudar o efeito de perturbações estocásticas sobre esse sistema. Introduzimos uma perturbação aleatória à EDO inicial, nos moldes de Langevin, e obtivemos uma EDE, equação (\ref{triangulo}). A equação estocástica obtida foi investigada numericamente, utilizando-se o algoritmo de Euler-Maruyama. 
+Mostramos que o regime estacionário do sistema aleatório guarda dependência com a intensidade do ruído. 
+
+No caso da EDO biestável, estudamos o seu comportamento de equilíbrio, e sua dependência das 
+condições iniciais do sistema. Para condições iniciais positivas, ou seja $0\le x(0) \le +\infty$, 
+a solução da equação apresenta um equilibrio estável em $x = a$, para condições iniciais negativas, isto é $ 0 \ge x(0) \ge -\infty$, o sistema apresenta equilíbrio estável em $x=-a$; o sistema ainda apresenta equilíbrio instável para a soluções onde a condição inicial nula.
+
+Ao incluirmos uma perturbação aleatória, verificamos que o comportamento assimptótico (grandes valores de tempo) do
+sistema representado pela EDE depende da amplitude de ruído adicionada ao sistema.
+Valores pequenos do ruído geram flutuações em torno de um limite assimptótico correspondente à
+condição inicial do sistema, enquanto grandes valores da amplitude de ruído causam flutuações
+em torno do limite assimptótico de equilibrio instável. É surpreendente que, para valores
+intermediários da amplitude de flutuação, o comportamento assimptótico resulte em flutuações alternadas em torno
+de ambos os pontos de equilíbrio estável. Pretendemos aplicar estes resultados para o estudo do
+processo de determininação do destino celular.

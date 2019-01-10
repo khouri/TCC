@@ -1,0 +1,15 @@
+/*Gera um conjunto de numeros satisfazendo uma dist. uniforme*/
+double * d_Uniforme(int numPontos, int semente){
+
+    //Vetor de doubles com a distribuição uniforme.
+    double * uniforme = alocaMemoriaDouble(numPontos);
+
+    //Define semente aleatoria.
+    srand(semente);
+
+    int i;//contador.
+    for(i = 0; i < numPontos; i++)
+        uniforme[i] = frand();
+
+    return uniforme;
+}

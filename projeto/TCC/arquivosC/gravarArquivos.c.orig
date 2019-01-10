@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "gravarArquivos.h"
+
+int gravaArquivoHistograma(double*X, int*Y, double Z,
+                           int tamanho, char * nomeArquivo)
+{
+    //printArray(X, tamanho);
+    //printArrayInt(Y, tamanho);
+    printf("tam  %d ",tamanho);
+
+    //Abre/Cria o arquivo para escrita.
+    FILE *arquivo = fopen(nomeArquivo, "w+");
+
+    if(arquivo != NULL)  // testa se o arquivo foi aberto com sucesso
+    {
+        printf("\nArquivo foi aberto com sucesso.\n");
+
+        fprintf(arquivo,"# %s\t\t%s\n","Eixo X","Frequência");//cria um header.
+        int contador;
+        for(contador = 0; contador <= tamanho; contador++) //grava no arquivo todos os pontos X " " Y
+        {
+            //double diff = (*(X+contador) - *(X+contador+1))/2;
+            //Cria uma estrutura de arquivo para que possa ser lido no gnuplot -> e.g. x " "y "\n"
+            fprintf(arquivo,"%f %d \n",*(X+contador),*(Y+contador));
+        }
+
+        fclose(arquivo);//Fecha o arquivo aberto.
+        return 0;//Indica arquivo criado com sucesso.
+
+    }
+    else
+    {
+        printf("Nao foi possivel abrir o arquivo.");
+        return -1;//Indica erro
+    }
+
+}
+
+
+//Create a file and save a variable number of pseudo random points
+int gravaArquivoTeste(double*X, int tamanho, char * nomeArquivo)
+{
+
+    FILE *arquivo = fopen(nomeArquivo, "w+");//Abre/Cria o arquivo para escrita.
+
+    if(arquivo != NULL)  // testa se o arquivo foi aberto com sucesso
+    {
+        printf("\nArquivo foi aberto com sucesso.\n");
+
+        printf("nome do arquivo %s \n",nomeArquivo);
+        printf("valor de tamanho %d \n ",tamanho);
+        printf("valor de X[0] %f  \n",*(X+0));
+
+        //double diferenca = (*(X+1) - *(X+0))/2;
+        //fprintf(arquivo,"# %s\t\t%s\n","X");//cria um header(ignorado pelo gnuplot) no arquivo.
+        int contador;//loop counter
+        for(contador = 0; contador < tamanho ; contador++) //grava no arquivo todos os pontos X " " Y
+        {
+
+            //Cria uma estrutura de arquivo para que possa ser lido no gnuplot -> e.g. x " "y "\n"
+            fprintf(arquivo,"%f \n",*(X+contador) );
+            //printf("contador %d ",contador);
+        }
+
+        fclose(arquivo);//Fecha o arquivo aberto.
+        return 0;//Indica arquivo criado com sucesso.
+
+    }
+    else
+    {
+
+        printf("Nao foi possivel abrir o arquivo.");
+        return -1;//Indica erro
+    }
+}//Fim da classe.
+
+
+//Create a file and save a variable number of pseudo random points
+int gravaArquivoDistUniforme(double*X, double*Y,int tamanho,char * nomeArquivo)
+{
+
+    FILE *arquivo = fopen(nomeArquivo, "w+");//Abre/Cria o arquivo para escrita.
+
+    if(arquivo != NULL)  // testa se o arquivo foi aberto com sucesso
+    {
+        printf("\nArquivo foi aberto com sucesso.\n");
+
+        //double diferenca = (*(X+1) - *(X+0))/2;
+        fprintf(arquivo,"# %s\t\t%s\n","X","Y");//cria um header(ignorado pelo gnuplot) no arquivo.
+        int contador;//loop counter
+        for(contador = 0; contador < tamanho ; contador++) //grava no arquivo todos os pontos X " " Y
+        {
+
+            //Cria uma estrutura de arquivo para que possa ser lido no gnuplot -> e.g. x " "y "\n"
+            fprintf(arquivo,"%f %f \n",*(X+contador),*(Y+contador));
+        }
+        fclose(arquivo);//Fecha o arquivo aberto.
+        return 0;//Indica arquivo criado com sucesso.
+
+    }
+    else
+    {
+
+        printf("Nao foi possivel abrir o arquivo.");
+        return -1;//Indica erro
+    }
+}//Fim da classe.
+

@@ -1,0 +1,27 @@
+/*******************************************************************************************/
+/*******************************************************************************************/
+/*************************Arquivo header do modulo de matematicaVetorial********************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/***************Conteudo: funcoes que calculam soma, multiplicacao, exponenciacao entre*****/
+/**********um numero real e um vetor, tambem foi implementada uma soma entre dois vetores***/
+/*******************************************************************************************/
+/*******************************************************************************************/
+/***************Autor: Adilson Lopes Khouri*************************************************/
+/*******************************************************************************************/
+/*******************************************************************************************/
+
+//Realiza uma soma de dois vetores: a[i] + b[i] i = [0:tamanho]
+double * somaDoisArrays(double * a, double * b, int tamanho);
+
+//Soma cumulativa das posicoes entre[inicio-fim] de um array.
+double somaPosicoesArray(int inicio, int fim, double * array);
+
+//Exponencia todos os numeros de um vetor.
+double * exponenciaNumeroVetor(double numero, double * array, int tamanhoArray);
+
+//Multiplica todos os elementos de um vetor por um numero qualquer.
+double * multiplicaNumeroVetor(double numero, double * array, int tamanhoArray);
+
+//Soma um numero real em todas as posicoes de um vetor.
+double * somaNumeroVetor(double numero, double * array, int tamanhoArray)

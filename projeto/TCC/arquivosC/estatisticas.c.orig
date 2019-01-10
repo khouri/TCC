@@ -1,0 +1,119 @@
+#include "estatistica.h"
+
+double dominioGrafico(double inicio, double fim)
+{
+    //Calcula a variacao de espaco entre dois pontos na reta X.
+
+    //Ambos positivos.
+    if(inicio >= 0 && fim >= 0)
+        return fim - inicio;
+
+    //Ambos negativos.
+    else if(inicio <= 0 && fim <= 0)
+        return inicio - fim;
+
+    //Sinais diferentes.
+    else
+        return fim - inicio;
+
+}
+
+
+//Retorna todos os intervalos entre valores.
+double* intervaloBarras(int nBarras, double inicio, double fim)
+{
+    //Define dimensoes do grafico.
+    int dif_Ini_fim = dominioGrafico(inicio,fim);//Largura do grafico
+    double tamBarra = (double)dif_Ini_fim/(double)nBarras;//Largura da barra
+
+    //Retorna os intervalos entre inicio e fim
+    double * retorno = (double *) malloc((nBarras+1)*sizeof(double));
+
+    int contador;
+    for(contador = 0; contador <= nBarras; contador++)
+    {
+        //Calcula todos os tamanhos de barras do histograma.
+
+        *(retorno+contador) = (tamBarra*contador) + inicio;
+        //printf("valor = %f",*(retorno+contador));
+    }
+    //printf("\n\ncontador %d",contador);
+
+    //Retorna um array com os limites dos intervalos das barras.
+    return retorno;
+}
+
+
+// Create two arrays, the first contains ferquence of
+//points in each interval, and second contains the sizes of ranges.
+int * CreateHistogram(double nBarras, double * pontos, int nPontos,
+                      double * retorno, int inicio, int fim)
+{
+    //Obs retorno representa o array dos intervalos de frequencia.
+    double * intBarras = intervaloBarras(nBarras,inicio,fim);
+
+    int * frequencia = (double*)malloc((nBarras+1)*sizeof(double));
+    double tamanhoIntervalo = dominioGrafico(inicio,fim);
+    double diferenca = tamanhoIntervalo/nBarras;//Calcula o tamanho de uma barra do histograma.
+
+
+    //Define o tamanho de cada intervalo em funcao do n° de particoes definidos.
+    int contador;//Contador
+    for(contador = 0; contador <= nBarras; contador++)
+    {
+        *(retorno+contador) = *(intBarras+contador);
+        *(frequencia+contador) = 0;//Inicializa o array de frequencia.
+    }
+
+    //Calcula a frequencia dos pontos entre os intervalos definidos.
+    //int contador = 0;
+    for(contador = 0; contador < nPontos; contador++)
+    {
+        int contador2;
+        for(contador2 = 0; contador2 <= nBarras; contador2++)
+        {
+            if(*(pontos+contador) >= *(intBarras+contador2) &&
+                    *(pontos+contador) < *(intBarras+contador2+1))
+            {
+                *(frequencia+contador2) = (*(frequencia+contador2)) + 1;
+            }
+        }
+
+        //*(frequencia+contador2) = 0.0;
+    }
+
+    return frequencia;
+}
+
+histograma * calculaFrequencia(double * pontos, int nPontos,
+                               int nBarras, int inicio, int fim)
+{
+
+    histograma * h = (histograma*) malloc(sizeof(histograma));
+    h->tam = nBarras;
+    h->intervalos = intervaloBarras(nBarras,inicio,fim);
+    h->frequencia = (int *) malloc((nBarras+1)*sizeof(int));
+
+    int contador;
+    for(contador = 0; contador < nPontos; contador++)
+    {
+        int contador2;
+        for(contador2 = 0; contador2 <= nBarras; contador2++)
+
+            if(*(pontos+contador) >= *((h->intervalos)+contador2) &&
+                    *(pontos+contador) < *((h->intervalos)+contador2+1))
+
+                *((h->frequencia)+contador2) = (*((h->frequencia)+contador2)) + 1;
+
+    }
+
+    return h;
+}
+
+
+void freeHistograma(histograma * liberar)
+{
+    free(liberar->frequencia);//Libera memoria do array de frequencia.
+    free(liberar->intervalos);//Libera memoria do array de intervalos.
+    free(liberar);//Libera memoria do ponteiro.
+}

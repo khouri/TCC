@@ -1,0 +1,196 @@
+#include <values.h>//Biblioteca matematica com os valores de variavies em C.
+#include <math.h>//Biblioteca matematica com muitas funcoes matematicas(e.g. seno, cos, tan).
+#include <stdio.h>
+#include <stdlib.h>
+#include "estatistica.h"
+#include "gravarArquivos.h"
+#include "plotarGraficos.h"
+#define PI M_PI
+#define seed1 100
+#define seed2 123
+#define frand() ((double)rand()+1)/RAND_MAX
+
+//Generate 'tamanhoDaSerie' pseudo random numbers in a Range[0,tamanhoDaSerie) in linear format.
+double* randomNumberWithSeedLinear(int tamanhoDaSerie)
+{
+//RAND_MAX	2147483647
+
+    int i;
+    double* pointer = (double*)malloc(tamanhoDaSerie*sizeof(double));
+    double rdMAX = RAND_MAX;
+    rdMAX = rdMAX+1;
+
+    /* inicializar o gerador de números aleatórios */
+    srand(100);//semente aleatória que garante números aleatórios(subentenda-se pseudo) sempre iguais
+    for (i = 0; i < tamanhoDaSerie; i++)
+    {
+        //printf("valor de i %d   ",i);
+        *(pointer+i) = rand()/rdMAX;
+        //printf("value %f \n", *(pointer+i));
+    }
+    //printf("i value = %d",i);
+    //printf("valor de iterações %d ",i);
+    //printf("tamnhao %d",(tamanhoDaSerie*2));
+    return pointer;
+}
+
+double * d_Uniforme(int numPontos, int semente)
+{
+    //Numeros pseudo aleatorios satisfazendo dist. uniforme.
+    double * uniforme = (double*) malloc(numPontos*sizeof(double));
+
+    srand(semente);//Define semente aleatoria.
+
+    int contador;
+    for(contador = 0; contador <= numPontos; contador++)
+        *(uniforme+contador) = frand();
+
+    return uniforme;
+}
+
+int distribuicaoUniforme(int numerodePontos,double* pontosNoEixoX, double* eixoY)
+{
+    double * serieRandom = randomNumberWithSeedLinear(numerodePontos);
+    double rdMAX = RAND_MAX;
+    rdMAX = rdMAX+1;
+
+    //printf("rdMAX %f",rdMAX);
+    srand(100);
+    int i;//itera sobre serieRandom pegando os numeros de dois a dois <x,y>
+    int j = 0;//Itera sobre os vetores de numeros aleatorios retornados que represntam todos os pontos de formato <x,y,0>
+    for(i = 0; j < numerodePontos; i = i+2)
+    {
+        *(pontosNoEixoX+j) = *(serieRandom+i)/rdMAX;
+        *(eixoY+j) = *(serieRandom+i+1)/rdMAX;
+        j++;
+    }
+
+    free(serieRandom);
+
+    return 1;
+}
+
+//Recebe N° total de barras no histograma e o tamanho total do intervalo.
+double* calculaNumeroDeIntervalos(int NumBarras, double tamTotalIntervalo)
+{
+
+    double * tamintervalos =
+        (double *) malloc((NumBarras+1)*sizeof(double));//Array que vai conter os limites de intervalos das barras.
+
+    double tamBarra = tamTotalIntervalo/NumBarras;//Armazena o tamanho de cada barra.
+
+    int count;//loop count
+    for(count = 0; count <= NumBarras; count++)  //O tamanhos eh a uma PA da diferenca razao = diferenca.
+    {
+        *(tamintervalos+count) = (tamBarra)*count;//Calcula todos os tamanhos de barras do histograma.
+        //printf("valor = %f",*(tamintervalos+count));
+    }
+
+    return tamintervalos;//Retorna um array com os limites dos intervalos das barras.
+}
+
+//Aqui vem o calculo da distribuicao exponencial.
+double * distribuicaoExponencial(int Npontos, double lambda)
+{
+    //Armazena pontos da distribuicao exponencial.
+    double * exp =   (double*)malloc(Npontos*sizeof(double));
+    double * eixoX = (double*)malloc(Npontos*sizeof(double));
+    double * eixoY = (double*)malloc(Npontos*sizeof(double));
+
+    //Obtem 2 arryas pseudo aleatorios de distribuicao Uniforme.
+    distribuicaoUniforme(Npontos,eixoX,eixoY);
+
+    //Calcula pontos da distribuicao exponencial.
+    int i = 0;
+    for(i = 0; i < Npontos; i++)
+        *(exp+i) = -1/lambda * log(1- *(eixoX+i));
+
+    //Libera Memoria alocada
+    free(eixoX);
+    free(eixoY);
+
+    return exp;
+}
+
+//Resolve o problema da distribuicao gaussiana
+double* distribuicaoGaussiana(int Npontos)
+{
+    //Formula: sqrt(-2log(U1)*2*PI) * cos(U2)*2*PI
+
+    //Define dois arrays que recebem duas sequencias de numeros aleatorios.
+    double * numAleatorios1 = (double*)malloc(Npontos*sizeof(double));
+    double * numAleatorios2 = (double*)malloc(Npontos*sizeof(double));
+    double * gaussiana = (double*)malloc(Npontos*sizeof(double));
+    distribuicaoUniforme(Npontos,numAleatorios1,numAleatorios2);
+
+    int contador;
+    for(contador = 0; contador < Npontos; contador++)
+    {
+        //cos(U2)*2*PI.
+        double cosseno =
+            cos(*(numAleatorios2+contador)*2*PI);
+
+        //sqrt(-2log(U1)*2*PI).
+        double logaritmoNatural =
+            sqrt(-2*log((*(numAleatorios1+contador))));
+
+        //Valor da gaussiana.
+        *(gaussiana+contador) =  cosseno*logaritmoNatural;
+    }
+
+    free(numAleatorios1);
+    free(numAleatorios2);
+
+    return gaussiana;
+}
+
+//Prints a array.
+void printArray(double * arrayToPrint, int sizeArray)
+{
+
+    printf("\n");
+    int contador;
+    for(contador = 0; contador < sizeArray; contador++)
+    {
+       printf("%f ",*(arrayToPrint+contador));
+    }
+    //printf("Number of iterations %d",contador);
+
+}
+
+//Prints a array.
+void printArrayInt(int * arrayToPrint, int sizeArray)
+{
+
+    printf("\n");
+    int contador;
+    for(contador = 0; contador < sizeArray; contador++)
+    {
+       printf("%d ",*(arrayToPrint+contador));
+    }
+    //printf("Number of iterations %d",contador);
+
+}
+
+int main()
+{
+
+    int nBarras = 100;
+    int nPontos = 10000;
+    int inicio = 0;
+    int fim = 1;
+    char * nomeArquivo = "Uniforme.dat";
+
+    double * dUniforme = d_Uniforme(nPontos,seed1);
+    histograma * h = calculaFrequencia(dUniforme,nPontos, nBarras,inicio,fim);
+
+    gravaArquivoHistograma(h->intervalos, h->frequencia, 1, h->tam+1, nomeArquivo);
+
+    plotHistogram(nomeArquivo);
+
+    //Libera memoria.
+    freeHistograma(h);
+    free(dUniforme);
+
+    return 1;
+}
